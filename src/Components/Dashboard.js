@@ -1,10 +1,12 @@
 import React from "react";
 import List from "./List";
-import Navbar from "./Navbar";
+import Search1 from "./Search";
 
 const Dashboard = () => {
   return (
     <>
+      <br />
+      <Search1 />
       <br />
       <List />
     </>

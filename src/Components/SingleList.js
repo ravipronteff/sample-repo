@@ -11,29 +11,38 @@ import RadioButtonsGroup from "./RadioButtonsGroup";
 // import { CssBaseline } from "@material-ui/core/styles";
 import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
-
+import Search1 from "./Search";
+import TextField from "@mui/material/TextField";
+import { Typography } from "@mui/material";
 const SingleList = () => {
-  const { id } = useParams();
-  console.log(id, "id");
+  // const { id } = useParams();
+  // console.log(id, "id");
+  const [value, setValue] = React.useState([null, null]);
 
   return (
     <>
-      <div style={{ marginTop: "80px" }}>
-        <Grid container spacing={0}>
-          <Grid item xs={4} md={3}>
-            <Box sx={{ ml: 4 }}>
-              <RadioButtonsGroup />
-            </Box>
-          </Grid>
-          <Grid item xs={8} md={9}>
-            <RangePicker />
-          </Grid>
+      <Grid container spacing={0}>
+        <Grid item xs={4} md={3}>
+          <Box sx={{ ml: 4, mt: 2 }}>
+            <TextField id="outlined-basic" label="Search" variant="outlined" />
+            <RadioButtonsGroup />
+          </Box>
         </Grid>
-      </div>
-      <Stack spacing={2} direction="row">
-        <Button variant="contained">Update</Button>
-        <Button variant="outlined">Cancel</Button>
-      </Stack>
+        <Grid item xs={8} md={9}>
+          <RangePicker value={value} setValue={setValue} />
+          <Stack spacing={4} direction="row">
+            <Typography variant="h6" component="h2">
+              {value[0]?.toLocaleDateString()}
+            </Typography>
+            <Typography variant="h6" component="h6">
+              {value[1]?.toLocaleDateString()}
+            </Typography>
+
+            <Button variant="contained">Update</Button>
+            <Button variant="outlined">Cancel</Button>
+          </Stack>
+        </Grid>
+      </Grid>
     </>
   );
 };

@@ -39,7 +39,7 @@ const Navbar = () => {
   };
 
   return (
-    <AppBar color="secondary" position="absolute">
+    <AppBar style={{ backgroundColor: "#6D00B2" }} position="sticky">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
@@ -110,7 +110,7 @@ const Navbar = () => {
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                <Avatar alt="Ravi" src="/static/images/avatar/2.jpg" />
               </IconButton>
             </Tooltip>
             <Menu

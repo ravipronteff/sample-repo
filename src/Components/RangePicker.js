@@ -5,9 +5,7 @@ import AdapterDateFns from "@mui/lab/AdapterDateFns";
 import LocalizationProvider from "@mui/lab/LocalizationProvider";
 import Box from "@mui/material/Box";
 
-export default function RangePicker() {
-  const [value, setValue] = React.useState([null, null]);
-
+export default function RangePicker({ setValue, value }) {
   return (
     <LocalizationProvider dateAdapter={AdapterDateFns}>
       <StaticDateRangePicker

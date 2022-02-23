@@ -25,9 +25,7 @@ function LayoutsWithNavbar() {
   return (
     <>
       <Navbar />
-      <div style={{ marginTop: "20px" }}>
-        <Outlet />
-      </div>
+      <Outlet />
     </>
   );
 }
